@@ -1,4 +1,6 @@
-<html lang="en"><head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Crescent School — Excellence with Values</title>
@@ -124,6 +126,22 @@
       .menu.open{display:flex;flex-direction:column;align-items:flex-start}
       .burger{display:inline-flex;align-items:center;gap:8px}
     }
+
+    /* Custom styles for map centering */
+    .map-container {
+      display: flex;
+      justify-content: center;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid #e7eee9;
+      max-width: 320px; /* Adjust as needed */
+      margin: 0 auto;
+    }
+    .map-container iframe {
+      width: 100%; /* Make iframe responsive within its container */
+      height: 320px;
+      border: 0;
+    }
   </style>
 </head>
 
@@ -145,7 +163,7 @@
     <nav>
       <div class="brand">
         <!-- Replace with your logo file -->
-        <img src="crescent logo.jpg" alt="School Logo">
+        <img src="crescent logo.jpg" alt="Crescent School Logo">
         <div>
           <div class="title">Crescent school</div>
           <div class="subtitle">Excellence • Character • Faith</div>
@@ -159,9 +177,7 @@
         <a href="#shifts">Shifts</a>
         <a href="#notices">Notices</a>
         <a href="#facilities">Facilities</a>
-        
         <a href="#gallery">Gallery</a>
-        
         <a href="#admissions" class="cta">Apply Now</a>
       </div>
     </nav>
@@ -190,8 +206,7 @@
       </div>
     </div>
 
-    <br>
-    <div class="wrap">
+    <div class="wrap" style="margin-top: 20px;">
       <b>Update</b>
       <marquee behavior="scroll" direction="left" aria-label="marquee announcements">Admission open for pre school "25-26&amp;26-27"</marquee>
     </div>
@@ -221,9 +236,9 @@
           <h3>Quick Facts</h3>
           <ul>
             <li>Affiliated to: GSEB</li>
-            
-    <li>Streams: Science (XI–XII)</li><li>Streams: Commerce (XI–XII)</li>
-    <li>Streams: Arts (XI–XII)</li>
+            <li>Streams: Science (XI–XII)</li>
+            <li>Streams: Commerce (XI–XII)</li>
+            <li>Streams: Arts (XI–XII)</li>
             <li>Mediums: English &amp; Gujarati</li>
             <li>Shifts: Morning &amp; Noon</li>
             <li>Separate Girls’ Section</li>
@@ -242,17 +257,19 @@
       </div>
       <div class="filters">
         <button class="active" data-filter="all">All</button>
-        <button data-filter="english" class="">English Medium</button>
+        <button data-filter="english">English Medium</button>
         <button data-filter="gujarati">Gujarati Medium</button>
         <button data-filter="preschool">Pre-School</button>
-        <button data-filter="girls" class="">Girls’ School</button>
-        <button data-filter="science">XI–XII </button>
+        <button data-filter="girls">Girls’ School</button>
+        <button data-filter="science">XI–XII Science</button>
+        <button data-filter="commerce">XI–XII Commerce</button>
+        <button data-filter="arts">XI–XII Arts</button>
       </div>
     </div>
 
     <div class="grid" id="programGrid">
       <!-- Pre-School -->
-      <div class="col-4" style="display: block;">
+      <div class="col-4">
         <div class="card program" data-tags="preschool">
           <h3>Pre-School</h3>
           <p>Play-based learning with phonics, numeracy, arts, sand &amp; water play, and values education.</p>
@@ -265,7 +282,7 @@
       </div>
 
       <!-- 1–10 English -->
-      <div class="col-4" style="display: block;">
+      <div class="col-4">
         <div class="card program" data-tags="english">
           <h3>Grades 1–10 (English Medium)</h3>
           <p>Comprehensive curriculum with Math, Science, Social Science, English, Gujarati, Computer, PE and Art.</p>
@@ -277,7 +294,7 @@
       </div>
 
       <!-- 1–10 Gujarati -->
-      <div class="col-4" style="display: block;">
+      <div class="col-4">
         <div class="card program" data-tags="gujarati">
           <h3>Grades 1–10 (Gujarati Medium)</h3>
           <p>Strong fundamentals in Gujarati language with parallel emphasis on Science &amp; Math; English taught progressively.</p>
@@ -289,31 +306,31 @@
       </div>
 
       <!-- XI–XII Science English -->
-      <div class="col-4" style="display: block;">
-        
-      <div class="card program" data-tags="science english">
+      <div class="col-4">
+        <div class="card program" data-tags="science english">
           <h3>XI–XII Science (English Medium)</h3>
           <p>Physics, Chemistry, Mathematics, Biology; competitive exam foundation (JEE/NEET) with mock tests and mentorship.</p>
           <ul>
             <li>Labs &amp; problem-solving workshops</li>
             <li>Counselling for careers</li>
           </ul>
-        </div></div>
+        </div>
+      </div>
 
-        <br>
-         <div class="col-4" style="display: block;">
-        
-      <div class="card program" data-tags="science english">
+      <!-- XI–XII Commerce English -->
+      <div class="col-4">
+        <div class="card program" data-tags="commerce english">
           <h3>XI–XII Commerce (English Medium)</h3>
           <p>It creates opportunities for trade and employment.</p>
           <ul>
-            <li>best teachers  &amp; problem-solving workshops</li>
+            <li>Best teachers &amp; problem-solving workshops</li>
             <li>Counselling for careers</li>
           </ul>
-        </div></div>
+        </div>
+      </div>
 
       <!-- XI–XII Science Gujarati -->
-      <div class="col-4" style="display: block;">
+      <div class="col-4">
         <div class="card program" data-tags="science gujarati">
           <h3>XI–XII Science (Gujarati Medium)</h3>
           <p>Full Science stream in Gujarati with bilingual support material; focused practice and concept mastery.</p>
@@ -322,25 +339,36 @@
             <li>Past paper practice (GSEB)</li>
           </ul>
         </div>
-      </div> 
+      </div>
 
-
-     <br>
-      <div class="col-4" style="display: block;">
-        
-      <div class="card program" data-tags="science english">
-          <h3>XI–XII Commerce (gujrati  Medium)</h3>
+      <!-- XI–XII Commerce Gujarati -->
+      <div class="col-4">
+        <div class="card program" data-tags="commerce gujarati">
+          <h3>XI–XII Commerce (Gujarati Medium)</h3>
           <p>It creates opportunities for trade and employment.</p>
           <ul>
-            <li>best teachers  &amp; problem-solving workshops</li>
+            <li>Best teachers &amp; problem-solving workshops</li>
             <li>Counselling for careers</li>
           </ul>
-        </div></div>
+        </div>
+      </div>
+
+      <!-- XI–XII Arts English/Gujarati (Added for completeness based on Quick Facts) -->
+      <div class="col-4">
+        <div class="card program" data-tags="arts english gujarati">
+          <h3>XI–XII Arts (English/Gujarati Medium)</h3>
+          <p>Explore humanities, social sciences, and creative arts. Focus on critical thinking and cultural understanding.</p>
+          <ul>
+            <li>Diverse subject options</li>
+            <li>Guidance for higher studies</li>
+          </ul>
+        </div>
+      </div>
 
       <!-- Girls’ School -->
-      <div class="col-4" style="display: block;">
+      <div class="col-4">
         <div class="card program" data-tags="girls english gujarati">
-          <h3>Seperate Girls’ School</h3>
+          <h3>Separate Girls’ School</h3>
           <p>Separate campus block with women faculty, leadership clubs, and safe, value-centric environment.</p>
           <ul>
             <li>Scholarships for meritorious girls</li>
@@ -369,9 +397,8 @@
             <thead><tr><th>Section</th><th>Timings</th></tr></thead>
             <tbody>
               <tr><td>Pre-School</td><td>08:15 – 11:15</td></tr>
-              <tr><td>Grades 1–12 (commerce)</td><td>07:30 – 12:20</td></tr>
+              <tr><td>Grades 1–12 (Commerce)</td><td>07:30 – 12:20</td></tr>
               <tr><td>XI–XII Science</td><td>07:20 – 2:00</td></tr>
-              
             </tbody>
           </table>
           <p style="margin-top:10px;color:var(--text-dim)">Friday (Jummah) half day</p>
@@ -385,7 +412,6 @@
             <tbody>
               <tr><td>Pre-School</td><td>11:15 – 14:15</td></tr>
               <tr><td>Grades 1–9</td><td>12:30 – 18:20</td></tr>
-              
               <tr><td>Girls’ School (1-8)</td><td>12:00 – 18:20</td></tr>
             </tbody>
           </table>
@@ -408,10 +434,10 @@
     <div class="notice">
       <div class="pill">Notice</div>
       <div>
-        <strong>Admission Open 2025–26 &amp; 2026-2027</strong> — Forms available  at office (9:00–1:00, 2:00–5:00). (preschool)eurokids.
+        <strong>Admission Open 2025–26 &amp; 2026-2027</strong> — Forms available at office (9:00–1:00, 2:00–5:00). (preschool)eurokids.
       </div>
     </div>
-    
+
     <div class="notice" style="margin-top:10px">
       <div class="pill">Event</div>
       <div>
@@ -434,13 +460,10 @@
       <div class="col-4"><div class="card"><h3>📚 Library</h3><p>6,000+ titles, reading corners, reference section, and digital catalogue.</p></div></div>
       <div class="col-4"><div class="card"><h3>🕌 Prayer &amp; Ethics</h3><p>Dedicated prayer room, weekly ethics sessions, and value education.</p></div></div>
       <div class="col-4"><div class="card"><h3>⚽ Sports</h3><p>Playground, futsal court, PE program, and annual sports meet.</p></div></div>
-      <div class="col-4"><div class="card"><h3>🚌 Transport</h3><p> buses with trained staff; routes across the city.</p></div></div>
+      <div class="col-4"><div class="card"><h3>🚌 Transport</h3><p>Buses with trained staff; routes across the city.</p></div></div>
       <div class="col-4"><div class="card"><h3>🧯 Safety</h3><p>CCTV, fire safety, medical room, and child protection policy.</p></div></div>
     </div>
   </section>
-
-  <!-- Faculty -->
-  
 
   <!-- Gallery -->
   <section id="gallery">
@@ -451,16 +474,31 @@
       </div>
     </div>
     <div class="grid">
-      <div class="col-4"><div class="card"><img alt="Campus" src="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&amp;w=1200&amp;auto=format&amp;fit=crop"></div></div>
-      <div class="col-4"><div class="card"><img alt="Library" src="https://images.unsplash.com/photo-1519682337058-a94d519337bc?q=80&amp;w=1200&amp;auto=format&amp;fit=crop"></div></div>
-      <div class="col-4"><div class="card"><img alt="Lab" src="https://images.unsplash.com/photo-1581093588401-16ec4a3d0f86?q=80&amp;w=1200&amp;auto=format&amp;fit=crop"></div></div>
+      <div class="col-4"><div class="card"><img alt="Classroom scene with students" src="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&amp;w=1200&amp;auto=format&amp;fit=crop"></div></div>
+      <div class="col-4"><div class="card"><img alt="School library with books" src="https://images.unsplash.com/photo-1519682337058-a94d519337bc?q=80&amp;w=1200&amp;auto=format&amp;fit=crop"></div></div>
+      <div class="col-4"><div class="card"><img alt="Science lab experiment" src="https://images.unsplash.com/photo-1581093588401-16ec4a3d0f86?q=80&amp;w=1200&amp;auto=format&amp;fit=crop"></div></div>
     </div>
   </section>
 
   <!-- Fees -->
   <section id="fees">
-    
-    
+    <div class="section-title">
+      <div>
+        <h2>Fees Structure</h2>
+        <p class="section-sub">Transparent fee details for all academic programs.</p>
+      </div>
+      <a class="btn" href="#contact">Enquire Now</a>
+    </div>
+    <div class="card">
+      <p>Detailed fee structures for each program (Pre-School, Grades 1-10, XI-XII Science/Commerce/Arts, Girls' School) are available at the school office or upon request via the contact form.</p>
+      <ul>
+        <li>Admission Fees</li>
+        <li>Tuition Fees (monthly/quarterly)</li>
+        <li>Activity Fees</li>
+        <li>Transport Fees (optional)</li>
+      </ul>
+      <p style="margin-top:10px;color:var(--text-dim)">Scholarships are available for meritorious students and those in need. Please contact the administration for more details.</p>
+    </div>
   </section>
 
   <!-- Admissions -->
@@ -492,13 +530,32 @@
         </div>
       </div>
       <div class="col-6">
-        
+        <div class="card">
+          <h3>Admission Schedule</h3>
+          <p>Admissions for the academic year 2025-26 are currently open for Pre-School and select grades. Please check the "Notices" section for specific deadlines.</p>
+          <p style="margin-top:10px;color:var(--text-dim)">Early application is encouraged as seats are limited.</p>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Downloads -->
-  
+  <section id="downloads">
+    <div class="section-title">
+      <div>
+        <h2>Downloads</h2>
+        <p class="section-sub">Important forms, circulars, and academic calendars.</p>
+      </div>
+    </div>
+    <div class="card">
+      <ul>
+        <li><a href="#">Admission Form 2025-26 (PDF)</a></li>
+        <li><a href="#">Academic Calendar 2024-25 (PDF)</a></li>
+        <li><a href="#">School Handbook (PDF)</a></li>
+        <li><a href="#">Fee Structure Document (PDF)</a></li>
+      </ul>
+    </div>
+  </section>
 
   <!-- FAQ / Policies -->
   <section id="faq">
@@ -531,27 +588,41 @@
         <p class="section-sub">We’re happy to help. Office hours 9:00–1:00 &amp; 2:00–5:00.</p>
       </div>
     </div>
-<br>
-    <center>
-    <div class="grid">
+    <div class="grid" style="margin-top: 20px;">
       <div class="col-6">
-        
+        <div class="card">
+          <h3>Get in Touch</h3>
+          <p>Have questions or want to schedule a visit? Fill out the form below or reach us directly.</p>
+          <form style="margin-top:15px;">
+            <div style="margin-bottom:10px;">
+              <label for="contact-name" style="display:block; margin-bottom:5px; font-weight:600;">Your Name</label>
+              <input type="text" id="contact-name" style="width:100%; padding:8px; border:1px solid #e0ece6; border-radius:8px;">
+            </div>
+            <div style="margin-bottom:10px;">
+              <label for="contact-email" style="display:block; margin-bottom:5px; font-weight:600;">Your Email</label>
+              <input type="email" id="contact-email" style="width:100%; padding:8px; border:1px solid #e0ece6; border-radius:8px;">
+            </div>
+            <div style="margin-bottom:15px;">
+              <label for="contact-message" style="display:block; margin-bottom:5px; font-weight:600;">Message</label>
+              <textarea id="contact-message" rows="4" style="width:100%; padding:8px; border:1px solid #e0ece6; border-radius:8px;"></textarea>
+            </div>
+            <button type="submit" class="btn primary">Send Message</button>
+          </form>
+        </div>
       </div>
       <div class="col-6">
         <div class="card">
           <h3>Address</h3>
           <p>Near City Mosque, Main Road, Ahmedabad, Gujarat</p>
           <p>Phone: +91 98765 43210 • Email: info@school.edu</p>
-          <div style="border-radius:16px;overflow:hidden;border:1px solid #e7eee9">
-            <!-- Replace src with actual map embed if available -->
-           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3672.909760231131!2d72.5120415!3d22.990345599999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e9a941804c797%3A0xf0b59df21c8a4d43!2sCrescent%20School!5e0!3m2!1sen!2sin!4v1758253005401!5m2!1sen!2sin" width="300" height="320" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <div class="map-container" style="margin-top:15px;">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3672.909760231131!2d72.5120415!3d22.990345599999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e9a941804c797%3A0xf0b59df21c8a4d43!2sCrescent%20School!5e0!3m2!1sen!2sin!4v1758253005401!5m2!1sen!2sin" width="300" height="320" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
         </div>
       </div>
     </div>
   </section>
-</center>
-<br>
+
   <!-- Careers -->
   <section id="careers">
     <div class="section-title">
@@ -596,11 +667,10 @@
         <p>info@school.edu</p>
       </div>
     </div>
-    <div class="footbar">© 2025 [School Name]. All rights reserved.
-      <div class="footbar">Website devloped by Ayaan.
-<br>
-</div>
-  </div></footer>
+    <div class="footbar">© 2025 Crescent School. All rights reserved.
+      <div class="footbar">Website developed by Ayaan.</div>
+    </div>
+  </footer>
 
   <script>
     // Mobile menu toggle
@@ -624,6 +694,5 @@
       });
     });
   </script>
-
-
-</body></html>
+</body>
+</html>
